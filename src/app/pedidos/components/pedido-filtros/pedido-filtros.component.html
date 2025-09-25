@@ -1,0 +1,17 @@
+<ul class="tabs-status">
+  <li (click)="selecionar('todos')" [class.ativo]="status === 'todos'">
+    Todos ({{ contadores.todos }})
+  </li>
+  <li (click)="selecionar('pendente')" [class.ativo]="status === 'pendente'">
+    Pendentes ({{ contadores.pendente }})
+  </li>
+  <li (click)="selecionar('preparando')" [class.ativo]="status === 'preparando'">
+    Preparando ({{ contadores.preparando }})
+  </li>
+  <li (click)="selecionar('pronto')" [class.ativo]="status === 'pronto'">
+    Prontos ({{ contadores.pronto }})
+  </li>
+  <li (click)="selecionar('entregue')" [class.ativo]="status === 'entregue'">
+    Entregues ({{ contadores.entregue }})
+  </li>
+</ul>

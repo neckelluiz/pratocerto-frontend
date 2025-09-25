@@ -1,1 +1,24 @@
-<p>pedidos-home works!</p>
+<div class="pedido-header">
+  <h1 class="titulo">Gestão de Pedidos</h1>
+  <p class="subtitulo">Gerencie todos os pedidos em tempo real</p>
+
+  <div class="search-box">
+    <span class="material-symbols-outlined">search</span>
+    <input
+      type="text"
+      [(ngModel)]="filtroBusca"
+      (input)="filtrarPedidos()"
+      placeholder="Buscar por cliente ou número do pedido..."
+    />
+  </div>
+
+  <app-pedido-filtros
+    [contadores]="contadores"
+    (statusSelecionado)="filtrarPorStatus($event)">
+  </app-pedido-filtros>
+
+
+  <app-pedidos-lista [pedidos]="pedidosFiltrados"></app-pedidos-lista>
+</div>
+
+

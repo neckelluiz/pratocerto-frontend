@@ -1,0 +1,30 @@
+<div class="card-pedido" (click)="abrirDetalhes()">
+  <div class="card-header">
+    <h3 class="cliente-nome">{{ pedido.cliente }}</h3>
+    <span class="status" [ngClass]="getStatusClass(pedido.status)">{{ pedido.status }}</span>
+  </div>
+
+  <div class="time-info-wrapper">
+    <span class="material-symbols-outlined">av_timer</span>
+    <span>{{ pedido.hora }}</span>
+  </div>
+
+  <div class="card-body">
+    <p><strong>Itens:</strong></p>
+    <ul class="itens-lista">
+      <li *ngFor="let item of pedido.itens">
+        {{ item.quantidade }}x {{ item.nome }} - R$ {{ item.preco | number:'1.2-2' }}
+      </li>
+    </ul>
+
+    <p>
+      <span class="material-symbols-outlined">location_on</span>
+      {{ pedido.endereco }}
+    </p>
+
+    <p class="valor-total">
+      <span class="material-symbols-outlined">attach_money</span>
+      R$ {{ pedido.total | number:'1.2-2' }}
+    </p>
+  </div>
+</div>

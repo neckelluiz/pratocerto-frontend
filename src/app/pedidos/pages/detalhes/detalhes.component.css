@@ -1,0 +1,214 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.back {
+  margin-bottom: 15px;
+}
+.back a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.back a:hover {
+  color: #000;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 22px;
+  margin: 0;
+}
+.status {
+  background: #ffe5cc;
+  color: #e67e22;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+.time {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.card .name {
+  font-weight: bold;
+}
+.card .info {
+  font-size: 14px;
+  color: #666;
+}
+.note {
+  background: #fff3e6;
+  color: #d35400;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-info .nome {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0;
+  color: #333;
+}
+
+.item-info .quantidade {
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+}
+
+.divisor {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.total-valor {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.actions {
+  text-align: right;
+}
+.actions button {
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.actions button:hover {
+  background: #d35400;
+}
+
+.next-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-action .text h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.next-action .text p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.next-action .btn-wrapper button {
+  background: linear-gradient(to right, #ff7a18, #ff5200);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.next-action .btn-wrapper button:hover {
+  background: linear-gradient(to right, #ff5200, #e64500);
+}
+
+.back {
+  margin-bottom: 15px;
+}
+
+.back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #e67e22;
+  font-size: 14px;
+  padding: 8px 14px;
+  border: 1px solid #e67e22;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.back a .material-symbols-outlined {
+  font-size: 18px;
+  vertical-align: middle;
+  color: #e67e22;
+  transition: color 0.2s ease;
+}
+
+.back a:hover {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.back a:hover .material-symbols-outlined {
+  color: #fff;
+}
+

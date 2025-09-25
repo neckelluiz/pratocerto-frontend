@@ -1,0 +1,33 @@
+.lista-pedidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px 16px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+  gap: 20px;
+  grid-auto-rows: 1fr;
+}
+
+:host ::ng-deep .cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* força 2 colunas */
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Responsivo: em telas menores que 768px, fica 1 card por linha */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+app-pedido-card {
+  flex: 1 1 calc(50% - 16px);
+  box-sizing: border-box;
+}

@@ -1,0 +1,65 @@
+.pedido-header {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.titulo {
+  color: #f97316;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitulo {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 4px 0 16px 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid darkgray;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+}
+
+.search-box .icon {
+  margin-right: 8px;
+  color: #9ca3af;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 300px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+

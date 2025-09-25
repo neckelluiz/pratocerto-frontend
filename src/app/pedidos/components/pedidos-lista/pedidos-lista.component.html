@@ -1,0 +1,12 @@
+<div class="cards-container" *ngIf="pedidos.length > 0; else vazio">
+  <app-pedido-card
+    *ngFor="let pedido of pedidos"
+    [pedido]="pedido"
+    (selecionar)="selecionarPedido($event)">
+  </app-pedido-card>
+</div>
+
+<ng-template #vazio>
+  <p>Nenhum pedido encontrado.</p>
+</ng-template>
+

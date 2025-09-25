@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="back">
+    <a href="#">
+      <span class="material-symbols-outlined">west</span>
+      Voltar aos pedidos
+    </a>
+  </div>
+
+  <div class="header">
+    <h1 style="font-weight: bold">Pedido #{{ pedido.id }}</h1>
+    <span class="status" [ngClass]="pedido.status">{{ pedido.status | titlecase }}</span>
+  </div>
+  <p class="time">🕒 {{ pedido.hora }}</p>
+
+  <div class="card">
+    <h2>📦 Informações do Cliente</h2>
+    <p class="name">{{ pedido.cliente }}</p>
+    <p class="info">📞 {{ pedido.telefone }}</p>
+    <p class="info">📍 {{ pedido.endereco }}</p>
+
+    <div class="note" *ngIf="pedido.observacoes">
+      <strong>Observações:</strong> {{ pedido.observacoes }}
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Itens do Pedido</h2>
+
+    <div class="item" *ngFor="let item of pedido.itens">
+      <div class="item-info">
+        <p class="nome">{{ item.nome }}</p>
+        <small class="quantidade">Quantidade: {{ item.quantidade }}</small>
+      </div>
+      <p class="preco">R$ {{ item.preco | number:'1.2-2' }}</p>
+    </div>
+
+    <hr class="divisor" />
+
+    <div class="total">
+      <span class="total-label">Total</span>
+      <span class="total-valor">R$ {{ pedido.total | number:'1.2-2' }}</span>
+    </div>
+  </div>
+
+  <div class="card next-action">
+    <div class="text">
+      <h3>Próxima Ação</h3>
+      <p>Atualizar status do pedido</p>
+    </div>
+    <div class="btn-wrapper">
+      <button>✔ Confirmar Pedido</button>
+    </div>
+  </div>
+</div>

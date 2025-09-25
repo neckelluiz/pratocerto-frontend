@@ -1,0 +1,58 @@
+.filtros {
+  display: flex;
+  gap: 8px;
+}
+
+.filtros button {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+}
+
+.filtros button:hover {
+  border-color: #f97316;
+  color: #f97316;
+}
+
+.filtros .ativo {
+  background: #f97316;
+  color: white;
+  border: 1px solid #f97316;
+}
+
+.tabs-status {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.tabs-status li {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid darkgray;
+  transition: background-color 0.3s ease;
+  opacity: 1;
+  z-index: 10;
+}
+
+.tabs-status li:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+.tabs-status li.ativo {
+  background-color: #ff6600;
+  color: #fff;
+}
