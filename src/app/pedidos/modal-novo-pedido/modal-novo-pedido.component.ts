@@ -12,6 +12,7 @@ export class ModalNovoPedidoComponent {
     cliente: '',
     status: 'pendente',
     endereco: '',
+    telefone: 0,
     itens: [
       {
         nome: '',
