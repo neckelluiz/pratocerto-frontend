@@ -53,7 +53,6 @@ export class ModalNovoPedidoComponent {
       return;
     }
 
-
     const pedidoFinal: PedidoCreateDto = {
       ...this.pedido,
       total: this.calcularTotal()

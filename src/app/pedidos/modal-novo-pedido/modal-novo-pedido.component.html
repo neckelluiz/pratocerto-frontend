@@ -5,7 +5,6 @@
   </h2>
 
   <form>
-    <!-- Linha horizontal: Nome do Cliente + Status -->
     <div class="form-row-horizontal">
       <div class="form-group">
         <label>Nome do Cliente</label>
@@ -35,7 +34,6 @@
         placeholder="Digite o número do cliente">
     </div>
 
-    <!-- Endereço -->
     <div class="form-row">
       <label>Endereço de Entrega</label>
       <textarea
@@ -45,14 +43,12 @@
       ></textarea>
     </div>
 
-    <!-- Itens do Pedido -->
     <div class="itens-section">
       <div class="itens-header">
         <h3>Itens do Pedido</h3>
         <button type="button" class="btn-add-item" (click)="adicionarItem()">+ Adicionar Item</button>
       </div>
 
-      <!-- ✅ CABEÇALHO COMO LABELS -->
       <div class="item-labels" *ngIf="pedido.itens.length > 0">
         <div class="col-nome">
           <label>Nome do Item</label>
@@ -82,7 +78,6 @@
       </div>
     </div>
 
-    <!-- Total -->
     <div class="card-total-pedido">
       <div class="card-content">
         <span class="total-label">Total do Pedido:</span>
@@ -90,7 +85,6 @@
       </div>
     </div>
 
-    <!-- Botões -->
     <div class="modal-actions">
       <button type="button" class="btn-cancelar" (click)="fechar()">Cancelar</button>
       <button type="submit" class="btn-criar" (click)="criarPedido()">Criar Pedido</button>
