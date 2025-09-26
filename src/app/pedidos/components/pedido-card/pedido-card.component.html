@@ -1,12 +1,22 @@
 <div class="card-pedido" (click)="abrirDetalhes()">
   <div class="card-header">
     <h3 class="cliente-nome">{{ pedido.cliente }}</h3>
-    <span class="status" [ngClass]="getStatusClass(pedido.status)">{{ pedido.status }}</span>
+
+    <div class="acoes-header">
+    <span class="status" [ngClass]="getStatusClass(pedido.status)">
+      {{ pedido.status }}
+    </span>
+
+      <button class="btn-delete" (click)="removerPedido(); $event.stopPropagation()">
+        <span class="material-icons">delete</span>
+      </button>
+    </div>
   </div>
+
 
   <div class="time-info-wrapper">
     <span class="material-symbols-outlined">av_timer</span>
-    <span>{{ pedido.hora }}</span>
+    <span>{{ formatarHora(pedido.hora) }}</span>
   </div>
 
   <div class="card-body">

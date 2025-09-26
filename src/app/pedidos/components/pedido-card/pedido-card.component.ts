@@ -8,15 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./pedido-card.component.css']
 })
 export class PedidoCardComponent {
-  constructor(private router: Router) {
-  }
   @Input() pedido!: Pedido;
   @Output() selecionar = new EventEmitter<Pedido>();
+  @Output() remover = new EventEmitter<number>();
+
+  constructor(private router: Router) {}
 
   abrirDetalhes() {
     this.router.navigate(['/pedidos', this.pedido.id]);
   }
+
   getStatusClass(status: string): string {
     return status.toLowerCase().replace(/\s+/g, '-');
   }
+
+  removerPedido() {
+    this.remover.emit(this.pedido.id);
+  }
+
+  formatarHora(hora: string): string {
+    const date = new Date(`1970-01-01T${hora}`);
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
 }

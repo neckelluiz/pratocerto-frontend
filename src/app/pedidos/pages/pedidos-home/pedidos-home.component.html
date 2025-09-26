@@ -1,5 +1,11 @@
 <div class="pedido-header">
-  <h1 class="titulo">Gestão de Pedidos</h1>
+  <div class="header-top">
+    <h1 class="titulo">Gestão de Pedidos</h1>
+    <button class="btn-novo-pedido" (click)="abrirFormulario()">
+      <span class="material-symbols-outlined">add</span>
+      Novo Pedido
+    </button>
+  </div>
   <p class="subtitulo">Gerencie todos os pedidos em tempo real</p>
 
   <div class="search-box">
@@ -18,7 +24,11 @@
   </app-pedido-filtros>
 
 
-  <app-pedidos-lista [pedidos]="pedidosFiltrados"></app-pedidos-lista>
+  <app-pedidos-lista
+    [pedidos]="pedidosFiltrados"
+    (remover)="removerPedido($event)">
+  </app-pedidos-lista>
+
 </div>
 
 

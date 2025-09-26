@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../models/pedido.model';
 import { PedidoService } from '../../../services/pedido.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalNovoPedidoComponent } from "../../modal-novo-pedido/modal-novo-pedido.component";
 
 @Component({
   selector: 'app-pedidos-home',
@@ -9,7 +11,6 @@ import { PedidoService } from '../../../services/pedido.service';
 })
 export class PedidosHomeComponent implements OnInit {
   pedidos: Pedido[] = [];
-  pedidosOriginais: Pedido[] = [];
   pedidosFiltrados: Pedido[] = [];
   filtroBusca: string = '';
   statusSelecionado: string = 'todos';
@@ -22,10 +23,22 @@ export class PedidosHomeComponent implements OnInit {
     entregue: 0
   };
 
-  constructor(private pedidoService: PedidoService) {}
+  constructor(private pedidoService: PedidoService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.carregarPedidos();
+  }
+
+  carregarPedidos(): void {
+    this.pedidoService.listar().subscribe({
+      next: (data) => {
+        this.pedidos = data || [];
+        this.filtrarPedidos();
+      },
+      error: (err) => {
+        console.error('Erro ao carregar pedidos:', err);
+      }
+    });
   }
 
   filtrarPedidos(): void {
@@ -51,22 +64,44 @@ export class PedidosHomeComponent implements OnInit {
     };
   }
 
-  carregarPedidos(): void {
-    this.pedidoService.listar().subscribe({
-      next: (data) => {
-        this.pedidos = data;
-        this.filtrarPedidos();
-      },
-      error: (err) => {
-        console.error('Erro ao carregar pedidos:', err);
-      }
-    });
-  }
-
-
   filtrarPorStatus(status: string): void {
     this.statusSelecionado = status;
     this.filtrarPedidos();
   }
+  abrirFormulario() {
+    this.dialog.open(ModalNovoPedidoComponent).afterClosed().subscribe(novoPedido => {
+      if (novoPedido) {
+        this.pedidoService.salvar(novoPedido).subscribe({
+          next: (pedidoCriado) => {
+            this.pedidos.push(pedidoCriado);
+            this.filtrarPedidos();
+          },
+          error: (err) => {
+            console.error("Erro ao criar pedido:", err);
+          }
+        });
+      }
+    });
+  }
 
+  removerPedido(id: number | undefined): void {
+    if (id === undefined || id === null) {
+      console.warn('Tentativa de remover pedido sem id — recarregando lista para sincronização.');
+      this.carregarPedidos();
+      return;
+    }
+
+
+    this.pedidos = this.pedidos.filter(p => p.id !== id);
+    this.filtrarPedidos();
+
+    this.pedidoService.remover(id).subscribe({
+      next: () => {
+        this.carregarPedidos();
+      },
+      error: (err) => {
+        this.carregarPedidos();
+      }
+    });
+  }
 }

@@ -16,3 +16,13 @@ export interface Pedido {
   observacoes: string;
   status: 'pendente' | 'preparando' | 'pronto' | 'entregue';
 }
+
+export interface PedidoCreateDto {
+  cliente: string;
+  itens: PedidoItem[];
+  endereco: string;
+  total: number;
+  telefone?: number;
+  observacoes?: string;
+  status?: 'pendente' | 'preparando' | 'pronto' | 'entregue';
+}

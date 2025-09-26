@@ -10,6 +10,8 @@ import { PedidoCardComponent } from './pedidos/components/pedido-card/pedido-car
 import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from '@angular/material/icon';
 import { DetalhesComponent } from './pedidos/pages/detalhes/detalhes.component';
+import { ModalNovoPedidoComponent } from './pedidos/modal-novo-pedido/modal-novo-pedido.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -19,14 +21,17 @@ import { DetalhesComponent } from './pedidos/pages/detalhes/detalhes.component';
     PedidoFiltrosComponent,
     PedidosListaComponent,
     PedidoCardComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    ModalNovoPedidoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

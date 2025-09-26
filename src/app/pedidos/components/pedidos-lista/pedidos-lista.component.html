@@ -1,8 +1,9 @@
 <div class="cards-container" *ngIf="pedidos.length > 0; else vazio">
   <app-pedido-card
-    *ngFor="let pedido of pedidos"
+    *ngFor="let pedido of pedidos; trackBy: trackById"
     [pedido]="pedido"
-    (selecionar)="selecionarPedido($event)">
+    (selecionar)="selecionarPedido($event)"
+    (remover)="removerPedido($event)">
   </app-pedido-card>
 </div>
 
