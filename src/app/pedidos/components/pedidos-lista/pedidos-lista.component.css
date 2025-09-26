@@ -8,19 +8,18 @@
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   grid-auto-rows: 1fr;
 }
 
 :host ::ng-deep .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* força 2 colunas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   align-items: stretch;
 }
 
-/* Responsivo: em telas menores que 768px, fica 1 card por linha */
 @media (max-width: 768px) {
   .cards-container {
     grid-template-columns: 1fr;
